@@ -3,9 +3,11 @@ class Animal:
     all = []
 
     def __init__(self, species, weight, nickname, zoo):
-        self.species = species
+        if isinstance(species, str):
+            self.species = species
+        if isinstance(nickname, str):
+            self.nickname = nickname
         self.weight = weight
-        self.nickname = nickname
         self.zoo = zoo
         Animal.all.append(self)
 
